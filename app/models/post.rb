@@ -1,5 +1,9 @@
 class Post < ApplicationRecord
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> upstream/test
   has_one_attached :image
   validates :posted_by,presence: true
   validates :restaurant_name,presence: true

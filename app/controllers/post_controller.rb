@@ -9,11 +9,12 @@ class PostController < ApplicationController
                         restaurant_name: params[:restaurant_name],
                         restaurant_adress: params[:restaurant_adress],
                         restaurant_adress_url: params[:restaurant_adress_url],
-                        location_lat: params[:location_lat],
-                        location_lng: params[:location_lng],
                         cost: params[:cost],
                         rating: params[:rating],
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/test
                         taste: params[:taste],
                         vibes: params[:vibes],
                         price: params[:price],
@@ -21,7 +22,10 @@ class PostController < ApplicationController
                         image: params[:image])
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/test
       @post.rating = (@post.taste.to_f + @post.vibes.to_f + @post.price.to_f)/3
       @post.rating = BigDecimal(@post.rating.to_s).floor(1).to_f # 1.24
       if @post.save
