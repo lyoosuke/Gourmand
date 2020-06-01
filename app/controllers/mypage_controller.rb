@@ -6,7 +6,6 @@ class MypageController < ApplicationController
 
     @user = User.find_by(id: current_user.id)
 
-
     if @mypagedatas
       @user = cache_mypagedatas
     else
@@ -32,7 +31,7 @@ class MypageController < ApplicationController
       Post.all.to_a
     end
   end
-  
+
   private
 
   def cache_key(type = nil)
