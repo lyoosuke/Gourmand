@@ -7,7 +7,6 @@
               <% else %>
               <img src="/panda_profile.jpg" alt="" class="user-image">
               <% end %>
-
             </div>
 
             <p class="profile-name"><%= current_user.name %><i class="fas fa-edit name-edit-btn"><%= link_to "編集", "/mypage/edit", class: "edit-link" %></i></p>
@@ -37,13 +36,8 @@
               <% end %>
               <% average_rating = total_rating.to_f / restaurant_sum.to_f %>
               <% status_panda = "見習いパンダ" %>
-<<<<<<< HEAD
 
-              <% if restaurant_sum >= 5 && total_cost < 15000 then %>
-
-=======
               <% if restaurant_sum >= 5 && total_cost < 15000 then%>
->>>>>>> upstream/test
                 <% status_panda = "新人パンダ" %>
               <% elsif restaurant_sum < 5 && total_cost >= 15000 then %>
                 <% status_panda = "グルメなパンダ" %>
@@ -55,15 +49,10 @@
               <% elsif restaurant_sum >= 10 && total_cost >= 30000 then%>
                 <% status_panda = "美食家パンダ" %>
               <% end %>
-<<<<<<< HEAD
+
 
               <% if restaurant_sum >= 20 && total_cost < 20000 then %>
                 <% status_panda = "食い意地パンダ" %>
-
-=======
-                <% if restaurant_sum >= 20 && total_cost < 20000 then %>
-                  <% status_panda = "食い意地パンダ" %>
->>>>>>> upstream/test
               <% elsif restaurant_sum >= 20 && total_cost >= 20000 && total_cost < 50000  && average_rating >= 3.5 then %>
                 <% status_panda = "口だけパンダ" %>
               <% elsif restaurant_sum >= 20 && total_cost >= 20000 && total_cost < 50000  && average_rating < 3.5 then%>
@@ -72,13 +61,9 @@
                 <% status_panda = "成金パンダ" %>
               <% elsif restaurant_sum >= 20 && total_cost >= 50000  && average_rating >= 4.0 then%>
                 <% status_panda = "王族パンダ" %>
-<<<<<<< HEAD
 
               <% end %>
 
-=======
-              <% end %>
->>>>>>> upstream/test
               <p class="customer-rank">現在のあなたの称号は「<%=status_panda%>」だよ</p>
               <p class="customer-total-amount">今までに使った合計金額は<%=total_cost %>円だよ</p>
               <p class="customer-average-rating">今までに行ったお店の平均評価は<%=average_rating%>だよ</p>
@@ -115,12 +100,9 @@
                           <p class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i></p>
                     <% elsif post.rating == 5 %>
                           <p class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-<<<<<<< HEAD
+
                     <% end %>
                   </div>
-=======
-                    <% end %>                  </div>
->>>>>>> upstream/test
                   <% end %>
                 </div>
               <% end %>

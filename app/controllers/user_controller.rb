@@ -21,17 +21,17 @@ class UserController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
-<<<<<<< HEAD
-
   if params[:image].present?
     @user.image = params[:image]
   end
 
-=======
-  if params[:image].present?
-    @user.image = params[:image]
-  end
->>>>>>> upstream/test
+  # user DBにblobUrl保存
+  # imgタグにurl指定
+    @user.image_url = params[:blob]
+  # if params[:image].present?
+  #   @user.image = params[:image]
+  # end
+
     @user.save
     flash[:notice]="変更が反映されました"
     redirect_to("/mypage/profile")

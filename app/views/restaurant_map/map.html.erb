@@ -11,13 +11,7 @@
   <h1>あしあとMAP</h1>
   <p>今までに行ったお店がわかるよ！</p>
   <form onsubmit="return false;">
-<<<<<<< HEAD
-
-    <input type="text" value="味覚園北口" id="address">
-
-=======
     <input type="text" value="コンビニ" id="address">
->>>>>>> upstream/test
     <button type="button" value="検索" id="map_button">検索</button>
   </form>
   <!-- 地図を表示させる要素 -->
@@ -38,7 +32,6 @@
     <% end %>
     console.log(markerData);
     function initMap() {
-<<<<<<< HEAD
       var target = document.getElementById('map-canvas');
       var address = document.getElementById('address').value;
       var geocoder = new google.maps.Geocoder();
@@ -78,29 +71,16 @@
           alert('失敗しました。理由: ' + status);
           return;
         }
-=======
-      map = new google.maps.Map(document.getElementById('map-canvas'), {
-        center: {lat: 35.000, lng: 135.000},
-        zoom: 5
->>>>>>> upstream/test
+
       });
 
     }
   </script>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> upstream/test
-  <p>マーカーのある位置の<br>
-    緯度 <input type="text" id="lat" value=""><br>
-    経度 <input type="text" id="lng" value=""><br>
-    地図上をクリックするとマーカーを移動できます。</p>
 ​
 ​
 ​
   <!-- APIを取得 -->
-<<<<<<< HEAD
+
   <script type="text/javascript" src="//maps.google.com/maps/api/js?language=ja&region=JP&key=AIzaSyAFiiQ07NNboLBE3ZXTC8Zrs16PMcRJs-E&callback=initMap&libraries=places" async defer></script>
 
   <script type="text/javascript">
@@ -335,9 +315,6 @@ getMap.getAddress();
 */
 </script>
 
-=======
-  <script type="text/javascript" src="//maps.google.com/maps/api/js?language=ja&region=JP&key=AIzaSyAFiiQ07NNboLBE3ZXTC8Zrs16PMcRJs-E&callback=initMap" async defer></script>
-​
->>>>>>> upstream/test
+
 </body>
 </html>

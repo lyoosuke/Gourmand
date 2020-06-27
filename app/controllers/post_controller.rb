@@ -1,5 +1,5 @@
 class PostController < ApplicationController
-  before_action :cache_postindex
+  # before_action :cache_postindex
   def new
   end
 
@@ -8,24 +8,16 @@ class PostController < ApplicationController
       @post = Post.new(posted_by: current_user.id,
                         restaurant_name: params[:restaurant_name],
                         restaurant_adress: params[:restaurant_adress],
-                        restaurant_adress_url: params[:restaurant_adress_url],
+                        location_lat: params[:location_lat],
+                        location_lng: params[:location_lng],
                         cost: params[:cost],
                         rating: params[:rating],
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/test
                         taste: params[:taste],
                         vibes: params[:vibes],
                         price: params[:price],
                         comment: params[:comment],
                         image: params[:image])
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/test
       @post.rating = (@post.taste.to_f + @post.vibes.to_f + @post.price.to_f)/3
       @post.rating = BigDecimal(@post.rating.to_s).floor(1).to_f # 1.24
       if @post.save
@@ -42,7 +34,8 @@ class PostController < ApplicationController
   end
 
   def index
-    @posts = cache_postindex
+    @post = Post.find_by(posted_by: current_user.id)
+    @posts = Post.where(posted_by: current_user.id)
   end
 
   def edit
@@ -82,13 +75,6 @@ end
 
 
 private
-
-def cache_postindex
-  @postdatas = Rails.cache.fetch("cache_postindex", expires_in: 60.minutes) do
-    Post.where(posted_by: current_user.id).to_a
-  end
-end
-
 
 
 def post_params

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_04_071209) do
+ActiveRecord::Schema.define(version: 2020_06_26_142953) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -35,23 +35,19 @@ ActiveRecord::Schema.define(version: 2020_02_04_071209) do
 
   create_table "posts", force: :cascade do |t|
     t.string "posted_by", null: false
-    t.string "restaurant_name", null: false
-    t.text "restaurant_adress"
-    t.text "restaurant_adress_url"
     t.string "post_image_name"
     t.integer "cost"
     t.float "rating", null: false
     t.text "comment", limit: 140, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.float "location_lat"
     t.float "location_lng"
-=======
->>>>>>> upstream/test
     t.integer "taste"
     t.integer "vibes"
     t.integer "price"
+    t.string "restaurant_name"
+    t.string "restaurant_adress"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_02_04_071209) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.binary "image_url"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
